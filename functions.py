@@ -329,22 +329,26 @@ def PrintValuesi(filename, amp, freq, fase, sigma, xi, MSEgfitness, i):
     print("\n")    
     
     
-def FilterSR(sr, freq):
-    filename = 'DadosFreqSRFit.txt'
-    f = open(filename, "r")
-    g = f.readlines()
-    g = g[0].rstrip().split(" ")
-    a = float(g[2])
-    f.close()
+#def FilterSR(sr, freq):
+def FilterSR(a, b, sr, freq):
+    #filename = 'DadosFreqSRFit.txt'
+    #f = open(filename, "r")
+    #g = f.readlines()
+    #g = g[0].rstrip().split(" ")
+    #a = float(g[2])
+    #f.close()
     freq = -a*sr+freq
     
-    filename = 'DadosFreqXiFit.txt'
-    f = open(filename, "r")
-    g = f.readlines()
-    a = g[0].rstrip().split(" ")
-    a = float(a[2])
-    b = g[1].rstrip().split(" ")
-    b = float(b[2])
+    #filename = 'DadosFreqXiFit.txt'
+    #f = open(filename, "r")
+    #g = f.readlines()
+    #a = g[0].rstrip().split(" ")
+    #a = float(a[2])
+    #b = g[1].rstrip().split(" ")
+    #b = float(b[2])
+    
+    a = 0.0293
+    b = 2.3214
     
     xi = (freq - b)/a
     
